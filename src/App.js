@@ -56,16 +56,18 @@ class App extends Component {
           <Route exact path="/" render={() => {
             return <div className="container">
                   <div className="row">
-                  
-                    <TareaForm agregarTarea={this.agregarTarea}/>
-
-                  <div className="col-md-8">
-                      <Tareas
-                        tareas={this.state.tareas}
-                        eliminarTarea={this.eliminarTarea}
-                        cambiarEstado={this.cambiarEstado}
-                      />
-                  </div>
+                    <div className="col-md-3">
+                      <TareaForm agregarTarea={this.agregarTarea}/>
+                    </div>
+                    <div className="col-md-9">
+                      <div class="row row-cols-md-3">
+                        <Tareas
+                          tareas={this.state.tareas}
+                          eliminarTarea={this.eliminarTarea}
+                          cambiarEstado={this.cambiarEstado}
+                        />
+                      </div>
+                    </div>
                   </div>
               </div>
           }}>

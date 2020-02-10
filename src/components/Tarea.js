@@ -26,13 +26,14 @@ class Tarea extends Component {
 */
 
         return (
-            <div className="col-md-4">
-                <div className="card mt-4">
+            <div className="col mb-4">
+                <div className="card">
                     <div className="card-header">
                         <h3>{tarea.titulo}</h3>
                         <span className="badge badge-pill badge-danger ml-2">
                             {tarea.id}
                         </span>
+                        <button onClick={this.props.eliminarTarea.bind(this, tarea.id)} class="close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div className="card-body">
                         <p>{tarea.descripcion}</p>
