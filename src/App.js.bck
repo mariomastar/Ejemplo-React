@@ -1,0 +1,45 @@
+import React from 'react';
+import './App.css';
+
+/*
+function HolaMorsa(props) {
+  return (
+    <div>Hola {props.miTexto}</div>
+  )
+}
+*/
+
+class HolaMorsa extends React.Component {
+  state = {
+    show: true
+  }
+
+  cambiaEstado = () => {
+    this.setState({show: !this.state.show})
+  }
+
+  render() {
+    if (this.state.show) {
+      return (
+        <div>Hola {this.props.miTexto}
+          <button onClick={this.cambiaEstado}>Cambia estado</button>
+        </div>
+      )
+    } else {
+      return <h1>NO HAY ELEMENTOS <button onClick={this.cambiaEstado}>Cambia estado</button> </h1>
+    }
+  }
+}
+
+function App() {
+  return (
+    <div>
+      Este es mi componente:
+      <HolaMorsa miTexto="Morsa" />
+      <HolaMorsa miTexto="Mario" />
+      <HolaMorsa miTexto="Jenny" />
+    </div>
+  );
+}
+
+export default App;
